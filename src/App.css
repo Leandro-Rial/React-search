@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+html {
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+.App .alotflags {
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+
+.paises {
+  margin: 20px;
+  padding: 20px;
+}
+
+.paises .flags {
+  width: 300px;
+  height: 150px;
+}
+
+.paises h1 {
+
+}
