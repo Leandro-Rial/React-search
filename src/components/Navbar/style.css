@@ -1,0 +1,142 @@
+.navbar {
+    background: #060b26;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    margin: 0;
+}
+
+.navbar .Titulo {
+    color: #fff;
+}
+
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    background: none;
+}
+
+.nav-menu {
+    background: #3d1692;
+    width: 240px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    padding: 0 15px 0 0;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+}
+
+.nav-menu.active {
+    left: 0;
+    transition: 350ms;
+}
+
+.nav-text {
+    display: flex;
+    align-items: center;
+    padding: 8px 0 8px 0;
+    list-style: none;
+    height: 97px;
+    background: #060b26;
+}
+
+.nav-text a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.nav-text svg {
+    font-size: 22px;
+}
+
+.nav-text a:hover {
+    background: #2c8cfa;
+}
+
+.nav-menu-items {
+    width: 100%;
+}
+
+.navbar-toggle {
+    background: #060b26;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+span {
+    margin-left: 20px;
+}
+
+/* ********************************* */
+/* BUSCADOR */
+/* ********************************* */
+.Search {
+    margin: 0;
+    padding: 30px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #160636;
+}
+
+.search {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 500px;
+}
+
+.filtered {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    width: 500px;
+}
+
+.buscador {
+    padding: 15px 5px;
+    width: 300px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.buscador ul, li {
+    list-style: none;
+}
+
+.countries {
+    background: #ede;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.countries h4 {
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.countries .flags {
+    width: 50px;
+}

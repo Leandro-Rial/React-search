@@ -1,69 +1,26 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Home from './Pages/Home'
+import Reports from './Pages/Reports'
+import Products from './Pages/Products'
+import { Search } from "./components/Navbar/Search";
 
 function App() {
-  const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [search, setSearch] = useState("");
-  const [filteredCountries, setFilteredCountries] = useState([]);
-
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get("https://restcountries.eu/rest/v2/all")
-      .then((res) => {
-        setCountries(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  useEffect(() => {
-    setFilteredCountries(
-      countries.filter((country) =>
-        country.name.toLowerCase().includes(search.toLowerCase())
-      )
-    );
-  }, [search, countries]);
-
-  if (loading) {
-    return <p style={{ textAlign: "center" }}>Loading Countries</p>;
-  }
-
-  const filtered = (e) => {
-    setSearch(e.target.value);
-  };
-
   return (
-    <div className="App">
-      <h1>COUNTRIES LIST</h1>
-      <input
-        type="text"
-        placeholder="Search Countrie"
-        className="alotflags"
-        onChange={filtered}
-      />
-      {filteredCountries.map((country, i) => (
-        <CountryDetails key={i} {...country} />
-      ))}
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Search />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/reports" component={Reports} />
+          <Route path="/products" component={Products} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-const CountryDetails = (props) => {
-  const { name, flag } = props;
-
-  return (
-    <div className="paises">
-      <p>
-        <img src={flag} alt={name} className="flags" />
-      </p>
-      <h1>{name}</h1>
-    </div>
-  );
-};
 
 export default App;
